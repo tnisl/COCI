@@ -105,8 +105,7 @@ void solve(){
   }
 
   sort(c.begin(),c.end(), [&](int x, int y)->bool{
-    if(dp3[0][x]==dp3[0][y]) return x>=y;
-    return dp3[0][x] <dp3[0][y];
+    return (dp3[0][x] == dp3[0][y]? (x>=y) : dp3[0][x]<dp3[0][y]);
   });
   sort(S.begin(),S.end());
 
