@@ -104,7 +104,10 @@ void solve(){
       S.push_back(dp3[0][i]);
   }
 
-  stable_sort(c.begin(),c.end(), [&](int x, int y)->bool{return dp3[0][x] <=dp3[0][y];});
+  sort(c.begin(),c.end(), [&](int x, int y)->bool{
+    if(dp3[0][x]==dp3[0][y]) return x>=y;
+    return dp3[0][x] <dp3[0][y];
+  });
   sort(S.begin(),S.end());
 
   for(int i=1;i<c.size();++i)
