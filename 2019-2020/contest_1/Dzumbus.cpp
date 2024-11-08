@@ -104,8 +104,8 @@ void solve(){
       S.push_back(dp3[0][i]);
   }
 
-  sort(c.begin(),c.end(), [&](int x, int y)->bool{
-    return (dp3[0][x] == dp3[0][y]? (x>=y) : dp3[0][x]<dp3[0][y]);
+  stable_sort(c.begin(),c.end(), [&](int x, int y)->bool{
+    return dp3[0][x] <=dp3[0][y];
   });
   sort(S.begin(),S.end());
 
